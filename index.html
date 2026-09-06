@@ -237,10 +237,9 @@
 </head>
 <body>
 
-<div class="start-overlay" id="startOverlay"><span>toca para comenzar ✦</span></div>
+<div class="start-overlay" id="startOverlay"><span>toca aquí preciosa ✦</span></div>
 
 <canvas id="sky"></canvas>
-
 
 <audio id="bgMusic" src="GooGooDollsIris.mp3" loop preload="auto"></audio>
 
@@ -255,7 +254,7 @@
       <p>Gracias por ser la chica que siempre me apoya cuando lo necesito. Te quiero. Me encantas. Te amo.</p>
       <p>Ojalá cada estrella de esta noche te lo recuerde, y espero algún día volver a ser tu Dani.</p>
     </div>
-    <div class="signature">CON TODO MI CARIÑO Y AMOR -DANIEL</div>
+    <div class="signature">HECHO CON TODO MI AMOR Y CARIÑO -DANIEL</div>
   </div>
 </div>
 
@@ -292,7 +291,7 @@
     speed: 0.4 + Math.random() * 0.8
   }));
 
-  // Partículas doradas flotantes (como luz suave / polvo de luz)
+  // Partículas doradas flotantes 
   const PARTICLE_COUNT = 34;
   function makeParticle(){
     return {
@@ -384,7 +383,7 @@
   }
   draw();
 
-  // ---------- Campo de claveles (SVG generados) ----------
+  // ---------- Campo de claveles 
   const field = document.getElementById('flowerField');
 
   function carnationSVG(color, size){
@@ -423,23 +422,16 @@
     field.appendChild(wrap);
   }
 
-  // ---------- Sonido: tu propia canción, en bucle continuo ----------
-  // El archivo de audio se define arriba en <audio id="bgMusic" src="tu-cancion.mp3" ...>
-  // Solo hace falta el toque inicial porque los navegadores no permiten
-  // reproducir audio automáticamente sin una interacción del usuario.
   const startOverlay = document.getElementById('startOverlay');
   const bgMusic = document.getElementById('bgMusic');
 
   startOverlay.addEventListener('click', () => {
     bgMusic.volume = 0.6;
     bgMusic.play().catch(() => {
-      // Si el archivo no existe todavía o el navegador lo bloquea,
-      // no pasa nada más: la tarjeta funciona igual sin sonido.
     });
     startSyncedSchedule();
     startOverlay.classList.add('hidden');
   }, { once: true });
-  // ---------- Frases sincronizadas de fondo (una frase distinta por cada tiempo) ----------
   const desktopPositions = [
     'pos-top-left','pos-top-right','pos-bottom-left','pos-bottom-right',
     'pos-top-center','pos-bottom-center','pos-center-left','pos-center-right'
@@ -449,38 +441,38 @@
     'pos-top-center','pos-bottom-center'
   ];
   const positions = window.innerWidth < 640 ? mobilePositions : desktopPositions;
-
-  // t = segundos desde que arranca la música. phrase: null = espacio vacío intencional.
+  
   const schedule = [
-    { t: 13,  phrase: 'te amo' },
-    { t: 17,  phrase: 'contigo todo se siente más liviano' },
-    { t: 22,  phrase: 'eres de las cosas buenas que me tocaron' },
-    { t: 27,  phrase: 'quiero que sepas quién soy de verdad' },
-    { t: 31,  phrase: 'me encantas, así, sin adornos' },
-    { t: 36,  phrase: 'gracias por quedarte cuando podías irte' },
-    { t: 41,  phrase: 'eres mi persona favorita' },
-    { t: 45,  phrase: 'no hay prisa cuando estoy contigo' },
-    { t: 50,  phrase: 'contigo el tiempo se siente distinto' },
-    { t: 54,  phrase: 'quiero seguir eligiéndote' },
-    { t: 59,  phrase: 'me gusta quién soy cuando estás cerca' },
-    { t: 64,  phrase: 'esto que siento no se explica, se vive' },
-    { t: 69,  phrase: null },
-    { t: 81,  phrase: 'eres mi lugar seguro' },
-    { t: 85,  phrase: 'te lo digo en serio: te amo' },
-    { t: 90,  phrase: 'contigo hasta lo difícil se hace fácil' },
-    { t: 95,  phrase: 'gracias por tu paciencia conmigo' },
-    { t: 100,  phrase: 'vales muchísimo, nunca lo dudes' },
-    { t: 104, phrase: 'quiero cuidarte como tú me cuidas' },
-    { t: 109, phrase: 'me quedo con cada momento contigo' },
-    { t: 113, phrase: 'eres increíble y a veces creo que no lo sabes' },
-    { t: 119, phrase: null }, // 1:58 vacío
-    { t: 176, phrase: 'contigo aprendí a quedarme' },
-    { t: 179, phrase: 'gracias por ser mi apoyo' },
-    { t: 185, phrase: 'te quiero, hoy y siempre' },
-    { t: 189, phrase: 'eres mi persona' },
-    { t: 194, phrase: 'me encanta cómo eres' },
-    { t: 198, phrase: 'contigo todo tiene más sentido' },
-    { t: 202, phrase: 'espero seguir escribiendo esto contigo' }
+    { t: 12,  phrase: 'te amo' },
+    { t: 16,  phrase: 'contigo todo se siente más liviano' },
+    { t: 21,  phrase: 'eres de las cosas buenas que me tocaron' },
+    { t: 26,  phrase: 'quiero que sepas quién soy de verdad' },
+    { t: 30,  phrase: 'me encantas, así, sin adornos' },
+    { t: 35,  phrase: 'gracias por quedarte cuando podías irte' },
+    { t: 40,  phrase: 'eres mi persona favorita' },
+    { t: 44,  phrase: 'no hay prisa cuando estoy contigo' },
+    { t: 49,  phrase: 'contigo el tiempo se siente distinto' },
+    { t: 53,  phrase: 'quiero seguir eligiéndote' },
+    { t: 58,  phrase: 'me gusta quién soy cuando estás cerca' },
+    { t: 63,  phrase: 'esto que siento no se explica, se vive' },
+    { t: 68,  phrase: null },
+    { t: 80,  phrase: 'eres mi lugar seguro' },
+    { t: 84,  phrase: 'te lo digo en serio: te amo' },
+    { t: 89,  phrase: 'contigo hasta lo difícil se hace fácil' },
+    { t: 94,  phrase: 'gracias por tu paciencia conmigo' },
+    { t: 99,  phrase: 'vales muchísimo, nunca lo dudes' },
+    { t: 103, phrase: 'quiero cuidarte como tú me cuidas' },
+    { t: 108, phrase: 'me quedo con cada momento contigo' },
+    { t: 112, phrase: 'eres increíble y a veces creo que no lo sabes' },
+    { t: 118, phrase: null },
+    { t: 175, phrase: 'contigo aprendí a quedarme' },
+    { t: 178, phrase: 'gracias por ser mi apoyo' },
+    { t: 184, phrase: 'te quiero, hoy y siempre' },
+    { t: 188, phrase: 'eres mi persona' },
+    { t: 193, phrase: 'me encanta cómo eres' },
+    { t: 197, phrase: 'contigo todo tiene más sentido' },
+    { t: 201, phrase: 'espero seguir escribiendo esto contigo' },
+    { t: 215, phrase: null }
   ];
 
   const wordsContainer = document.getElementById('floatingWords');
@@ -495,7 +487,7 @@
   }
 
   function startSyncedSchedule(){
-    const CYCLE_SECONDS = 210; // un poco más que el último tiempo (3:21)
+    const CYCLE_SECONDS = 218; // justo después del cierre en 3:35
 
     function runOnce(){
       let posIdx = 0;
