@@ -180,20 +180,18 @@
     100% { opacity: 0; transform: scale(1.02); }
   }
 
-  .pos-top-left     { top: 9vh;  left: 6vw;  text-align: left; }
-  .pos-top-right    { top: 9vh;  right: 6vw; text-align: right; }
-  .pos-top-center   { top: 8vh;  left: 50%;  transform: translateX(-50%); text-align: center; }
-  .pos-bottom-left  { bottom: 24vh; left: 6vw;  text-align: left; }
-  .pos-bottom-right { bottom: 24vh; right: 6vw; text-align: right; }
-  .pos-bottom-center{ bottom: 22vh; left: 50%; transform: translateX(-50%); text-align: center; }
-  .pos-center-left  { top: 50%; left: 5vw;  transform: translateY(-50%); text-align: left; }
-  .pos-center-right { top: 50%; right: 5vw; transform: translateY(-50%); text-align: right; }
-  .pos-center       { top: 38%; left: 50%;  transform: translate(-50%, -50%); text-align: center; }
+  .pos-top-left     { top: 3vh;  left: 5vw;  text-align: left; }
+  .pos-top-right    { top: 3vh;  right: 5vw; text-align: right; }
+  .pos-top-center   { top: 2.5vh; left: 50%;  transform: translateX(-50%); text-align: center; }
+  .pos-bottom-left  { bottom: 4vh; left: 5vw;  text-align: left; }
+  .pos-bottom-right { bottom: 4vh; right: 5vw; text-align: right; }
+  .pos-bottom-center{ bottom: 3vh; left: 50%; transform: translateX(-50%); text-align: center; }
+  .pos-center-left  { top: 50%; left: 3vw;  max-width: 18vw; transform: translateY(-50%); text-align: left; }
+  .pos-center-right { top: 50%; right: 3vw; max-width: 18vw; transform: translateY(-50%); text-align: right; }
 
   @media (max-width: 600px){
-    .pos-top-left, .pos-top-right, .pos-top-center{ top: 6vh; }
-    .pos-bottom-left, .pos-bottom-right, .pos-bottom-center{ bottom: 27vh; }
-    .synced-word{ font-size: clamp(1rem, 5vw, 1.5rem); max-width: 70vw; }
+    .synced-word{ font-size: clamp(0.95rem, 4.4vw, 1.25rem); max-width: 42vw; }
+    .pos-top-center, .pos-bottom-center{ max-width: 60vw; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -442,10 +440,15 @@
     startOverlay.classList.add('hidden');
   }, { once: true });
   // ---------- Frases sincronizadas de fondo (una frase distinta por cada tiempo) ----------
-  const positions = [
+  const desktopPositions = [
     'pos-top-left','pos-top-right','pos-bottom-left','pos-bottom-right',
-    'pos-center','pos-top-center','pos-bottom-center','pos-center-left','pos-center-right'
+    'pos-top-center','pos-bottom-center','pos-center-left','pos-center-right'
   ];
+  const mobilePositions = [
+    'pos-top-left','pos-top-right','pos-bottom-left','pos-bottom-right',
+    'pos-top-center','pos-bottom-center'
+  ];
+  const positions = window.innerWidth < 640 ? mobilePositions : desktopPositions;
 
   // t = segundos desde que arranca la música. phrase: null = espacio vacío intencional.
   const schedule = [
